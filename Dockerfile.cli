@@ -1,0 +1,2 @@
+FROM amazeeio/php:7.3-cli
+
