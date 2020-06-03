@@ -2,8 +2,11 @@ ARG CLI_IMAGE
 FROM ${CLI_IMAGE} as cli
 
 FROM amazeeio/nginx
+
+#here we show an example of overwriting the basic image's configuration with a custom one
 COPY lagoon/nginx.conf /etc/nginx/conf.d/app.conf
 
 COPY --from=cli /app /app
+
 
 ENV WEBROOT=public
