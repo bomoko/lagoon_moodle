@@ -60,10 +60,10 @@ images_test: images_start
 .PHONY: images_publish
 images_publish: images_set_build_variables
 	TAGSFORBRANCH=""; \
-	if [ '$(GIT_BRANCH)' = "origin/master" ]; then \
+	if [ '$(GIT_BRANCH)' = "master" ]; then \
 		TAGSFORBRANCH="master latest";\
 	fi; \
-	if [ '$(GIT_BRANCH)' = "origin/develop" ]; then \
+	if [ '$(GIT_BRANCH)' = "develop" ]; then \
 		TAGSFORBRANCH="develop";\
 	fi; \
 	for repository in $(tagged_image_list); do \
