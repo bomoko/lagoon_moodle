@@ -54,7 +54,6 @@ images_start: images_set_build_variables images_start_network
 
 .PHONY: images_test
 images_test: images_start
-	DOCKER_REPO=$$DOCKER_REPO BUILDTAG=$(docker_build_tag) docker-compose exec -T cli composer install; \
 	DOCKER_REPO=$$DOCKER_REPO BUILDTAG=$(docker_build_tag) docker-compose exec -T cli ls; 
 
 # This target will iterate through all images and tags, pushing up versions of all with approriate tags
