@@ -2,4 +2,4 @@
 
 #This file just shows us at each step what and how we're building stuff
 
-DOCKER_REPO=algmprivsecops BUILDTAG=latest docker-compose build
+BUILD_NUMBER=1 DOCKER_REPO=algmprivsecops GIT_BRANCH=master make images_build

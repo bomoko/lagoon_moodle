@@ -1,3 +1,4 @@
 #!/bin/bash
 
-DOCKER_REPO=algmprivsecops BUILDTAG=latest docker-compose down -v
+BUILD_NUMBER=1 DOCKER_REPO=algmprivsecops GIT_BRANCH=master make images_stop
+BUILD_NUMBER=1 DOCKER_REPO=algmprivsecops GIT_BRANCH=master make images_remove
