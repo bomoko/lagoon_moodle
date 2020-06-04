@@ -5,6 +5,13 @@ x-lagoon-project:
   &cli-image $DOCKER_REPO/moodle_cli:$BUILDTAG
 
 
+x-volumes:
+  &default-volumes
+    # Define all volumes you would like to have real-time mounted into the docker containers
+    volumes:
+      - app:/app
+  
+
 x-environment:
   &default-environment
     LAGOON_PROJECT: *lagoon-project
@@ -26,6 +33,7 @@ services:
       lagoon.type: cli
     #volumes_from: # mount the ssh-agent from the pygmy or cachalot ssh-agent
       #- container:amazeeio-ssh-agent
+    # << : *default-volumes # loads the defined volumes from the top
     environment:
       << : *default-environment # loads the defined environment variables from the top
     depends_on:
@@ -42,6 +50,7 @@ services:
       lagoon.type: nginx-php
     depends_on:
       - cli 
+    # << : *default-volumes # loads the defined volumes from the top
     environment:
       << : *default-environment # loads the defined environment variables from the top
     networks:
@@ -60,6 +69,7 @@ services:
       lagoon.name: nginx # we want this service be part of the nginx pod in Lagoon
     depends_on:
       - cli 
+    # << : *default-volumes # loads the defined volumes from the top
     environment:
       << : *default-environment # loads the defined environment variables from the top
 
@@ -72,13 +82,9 @@ services:
     environment:
       << : *default-environment
 
-  redis:
-    image: amazeeio/redis
-    labels:
-      lagoon.type: redis-persistent #we make this persistent because we're storing jobs, not simply caching things
-    environment:
-      << : *default-environment
-
 networks:
   amazeeio-network:
     external: true
+
+volumes:
+  app:

@@ -1,3 +1,15 @@
+FROM amazeeio/php:7.3-cli as builder
+
+RUN wget -O moodle.tgz https://download.moodle.org/download.php/direct/stable38/moodle-latest-38.tgz && tar -zxvf moodle.tgz
+
 FROM amazeeio/php:7.3-cli
 
-COPY ./ /app
+# Moodle requires us to install some additional php extensions
+RUN apk add --no-cache php7-intl \
+    php7-xmlrpc icu icu-dev icu-libs  && docker-php-ext-install -j4 intl xmlrpc
+
+COPY --from=builder /app/moodle /app/public
+
+COPY config-dist.php /app/public/config.php
+
+RUN mkdir /app/moodledata
