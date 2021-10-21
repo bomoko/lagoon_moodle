@@ -6,7 +6,7 @@
         }
     ],
     "require": {
-        "moodle/moodle": "v3.2.0"
+        "moodle/moodle": "v3.5.17"
     }
 }
 
