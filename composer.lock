@@ -4,28 +4,27 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f759e321119929fb79db1f225ce67051",
+    "content-hash": "86e6807257e45d9bfc4cd0c49f9af738",
     "packages": [
         {
             "name": "moodle/moodle",
-            "version": "v3.5.17",
+            "version": "v3.9.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/moodle/moodle.git",
-                "reference": "5a1b6a9d50f5af06ac03fd9022c3fd4d23f60602"
+                "reference": "b02dd253b8e111cfa2c22883bb1d831c6f1f5f63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/moodle/moodle/zipball/5a1b6a9d50f5af06ac03fd9022c3fd4d23f60602",
-                "reference": "5a1b6a9d50f5af06ac03fd9022c3fd4d23f60602",
+                "url": "https://api.github.com/repos/moodle/moodle/zipball/b02dd253b8e111cfa2c22883bb1d831c6f1f5f63",
+                "reference": "b02dd253b8e111cfa2c22883bb1d831c6f1f5f63",
                 "shasum": ""
             },
             "require-dev": {
-                "instaclick/php-webdriver": "dev-local as 1.x-dev",
                 "mikey179/vfsstream": "^1.6",
-                "moodlehq/behat-extension": "3.35.4",
-                "phpunit/dbunit": "3.0.*",
-                "phpunit/phpunit": "6.5.*"
+                "moodlehq/behat-extension": "3.39.6",
+                "phpunit/dbunit": "4.0.*",
+                "phpunit/phpunit": "7.5.*"
             },
             "type": "project",
             "license": [
@@ -34,7 +33,7 @@
             "description": "Moodle - the world's open source learning platform",
             "homepage": "https://moodle.org",
             "support": {
-                "source": "https://github.com/moodle/moodle/tree/v3.5.17"
+                "source": "https://github.com/moodle/moodle/tree/v3.9.11"
             },
             "funding": [
                 {
@@ -46,7 +45,7 @@
                     "url": "moodle.org"
                 }
             ],
-            "time": "2021-03-06T17:03:45+00:00"
+            "time": "2021-11-06T09:34:10+00:00"
         }
     ],
     "packages-dev": [],
@@ -57,5 +56,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.2.0"
 }
